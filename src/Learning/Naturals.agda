@@ -1,4 +1,4 @@
-module Naturals where
+module Learning.Naturals where
 
 data ℕ : Set where
   zero : ℕ
