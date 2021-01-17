@@ -110,4 +110,4 @@ even+odd-is-odd : ∀ {m n : ℕ} → even m  → odd n → odd  (m + n)
 even+odd-is-odd {m} {n} even-m odd-n rewrite +-comm m n = odd+even-is-odd odd-n even-m
 
 odd+odd-is-even : ∀ {m n : ℕ} → odd m → odd n → even (m + n)
-odd+odd-is-even = {!!}
+odd+odd-is-even {m = suc a} {n = suc b} (suc even-a) (suc even-b) = suc (even+odd-is-odd {a} {suc b} even-a (suc even-b))
