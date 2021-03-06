@@ -49,9 +49,5 @@ assimilation ¬x ¬x′ = extensionality (λ x → ⊥-elim (¬x x))
 <-irreflexive zero    = λ()
 <-irreflexive (suc n) = λ{ (s≤s x) → <-irreflexive n x}
 
-trichotomy : ∀ (m n : ℕ) → (m < n × ¬ (m ≡ n) × ¬ (m > n))
-                         ⊎ (¬ (m < n) × (m ≡ n) × ¬ (m > n))
-                         ⊎ (¬ (m < n) × ¬ (m ≡ n) × (m > n))
-trichotomy zero zero = {!!}
-trichotomy zero (suc n) = {!!}
-trichotomy (suc m) n = {!!}
+em-irrefutable : ∀ {A : Set} → ¬ ¬ (A ⊎ ¬ A)
+em-irrefutable k = k (inj₂ λ a → k (inj₁ a))
